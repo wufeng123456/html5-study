@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+    }
+    .main{
+        height: 500px;
+        display: grid;
+        grid-auto-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr 1fr;
+        border: 1px solid greenyellow;
+    }
+    .up {
+        grid-column: 1/5;
+        grid-row: 1/2;
+        background: rebeccapurple;
+    }
+    .left {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        background: green;
+    }
+    .right {
+        grid-column: 3/5;
+        grid-row: 2/3;
+        background: lightcoral;
+    }
+    .main2 {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+    }
+    .up2 {
+        flex: 1;
+        background: rebeccapurple;
+    }
+    .left2 {
+        flex: 1;
+        background: green;
+    }
+    .right2 {
+        flex: 1;
+        background: lightcoral;
+    }
+    .inner-flex {
+        display: flex;
+        flex: 1;
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="up"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="main2">
+            <div class="up2"></div>
+            <div class="inner-flex">
+                <div class="left2"></div>
+                <div class="right2"></div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: greenyellow;
+    z-index: 10000;
+    padding: 0 20px;
+}
+.head-l {
+    height: 100px;
+    line-height: 100px;
+    float: left;
+    width: 60%;
+    background: hotpink;
+}
+.logo {
+    float: left;
+}
+.head-menu {
+    float: left;
+    list-style: none;
+}
+.head-menu li {
+    position: relative;
+    float: left;
+    padding: 0 20px;
+}
+.head-menu li:hover .dropdown-content{
+    display: block;
+}
+.head-r {
+    height: 100px;
+    line-height: 100px;
+    float: left;
+    width: 40%;
+    background: salmon;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dropdown-content::before{
+    content: '';
+    border-bottom: 8px solid rgba(255, 255,255, 1);
+    border-left: 8px solid rgba(255, 255, 255, 0);
+    border-right: 8px solid rgba(255, 255, 255, 0);
+}
+.dropdown-ul {
+    list-style: none;
+}
+.dropdown-ul li {
+    float: left;
+}
+.head-blank {
+    height: 100px;
+}
+.main {
+    position: relative;
+}
+.left {
+    min-height: 800px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background: green;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.right {
+    position: relative;
+    margin-left: 300px;
+    width: 100%;
+    background: gray;
+}
+.top {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    height: 60px;
+    line-height: 60px;
+    background: rebeccapurple;
+}
+.container {
+    height: 700px;
+}
+.bottom {
+    height: 40px;
+    line-height: 40px;
+    background: red;
+}
+</style>
+<body>
+    <div class="page">
+        <div class="head" >
+            <div class="head-l">
+                <a href="" class="logo">W3Cschool</a>
+                <ul class="head-menu">
+                    <li>英文</li>
+                    <li>数学
+                        <div class="dropdown-content">
+                            <ul class="dropdown-ul">
+                                <li>小学</li>
+                                <li>中学</li>
+                                <li>高中</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>语文</li>
+                </ul>
+            </div>
+            <div class="head-r"></div>
+        </div>
+        <div class="head-blank"></div>
+        <div class="main">
+            <div class="left">leftleftleftleftleftleftleft
+                    leftleftleftleftleftleftleftleftleft
+                    leftleftleftleftleftleftleftleftleftleft
+                    leftleftleftleftleftleftleftleftleftleft
+                    left
+            </div>
+            <div class="right">
+                <div class="top"></div>
+                <div class="container"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

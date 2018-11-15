@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .scrollbar {
+        height: 70px;
+        overflow-y: scroll;
+    }
+    .scrollbar::-webkit-scrollbar {
+        width: 8px;
+        /* background: gray; */
+    }
+    .scrollbar::-webkit-scrollbar-track {
+        /* background: green; */
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+        /* background: red; */
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<body>
+    <div class="scrollbar">
+        <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                Iure id exercitationem nulla qui repellat laborum vitae, <br>
+                molestias tempora velit natus. Quas, assumenda nisi. <br>
+                Quisquam enim qui iure, consequatur velit sit?
+        </p>
+    </div>
+</body>
+</html>

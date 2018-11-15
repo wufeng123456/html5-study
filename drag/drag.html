@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .drag-div {
+        height: 100px;
+        width: 100px;
+        background: red;
+    }
+</style>
+<body>
+    <a href="http://www.fkjava.org">疯狂软件教育</a>
+    <img src="hello.jpg" alt="hello">
+    <div id="source" class="drag-div" draggable="true">
+        疯狂软件教育
+    </div>
+</body>
+<script>
+    const source = document.getElementById('source');
+    source.ondragstart = function(e) {
+        e.dataTransfer.setData("text/plain", "www.hello.com");
+    }
+    document.ondragover = function(e) {
+        return false;
+    }
+    document.ondrop = function(e) {
+        const source = document.getElementById("source");
+        source.style.position = "absolute";
+        source.style.top = e.pageY + "px";
+        source.style.left = e.pageX + "px";
+        return false;
+    }
+</script>
+</html>

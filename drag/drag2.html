@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div>div {
+        display: inline-block;
+        background: #aaa;
+        height: 80px;
+        width: 100px;
+        margin: 10px;
+    }
+    .dest{
+        height: 400px;
+        width: 400px;
+        background: gray;
+        float: left;
+    }
+    .rubbish{
+        width: 400px;
+        height: 400px;
+        background: rebeccapurple;
+        float: right;
+    }
+</style>
+<body>
+    <div>
+        <h2>hello thank you</h2>
+        <div draggable="true" ondragstart="dsHandler(event);">物理</div>
+        <div draggable="true" ondragstart="dsHandler(event);">生物</div>
+        <div draggable="true" ondragstart="dsHandler(event);">化学</div>
+        <div draggable="true" ondragstart="dsHandler(event);">数学</div>
+    </div>
+    <div id="dest" class="dest" ondragleave="return false;">
+        收藏夹
+    </div>
+    <div id="rubbish" class="rubbish" draggable="false">
+        垃圾箱
+    </div>
+</body>
+<script>
+    const dest = document.getElementById('dest');
+    const rubbish = document.getElementById("rubbish");
+    const dsHandler = function(e) {
+        console.log(e);
+        e.dataTransfer.setData('text/plain', "<item>" + e.target.innerHTML);
+    }
+    dest.ondrop = function(e) {
+        const text = e.dataTransfer.getData("text/plain");
+        if (text.indexOf("<item>") === 0) {
+            const newEl = document.createElement("div");
+            newEl.innerHTML = text;
+            newEl.id = new Date().getMilliseconds;
+            newEl.draggable = "true";
+            newEl.ondragstart = function(e) {
+                e.dataTransfer.setData("text/plain", "<remove>" + newEl.id)
+            }
+            dest.appendChild(newEl);
+            console.log(dest);
+        }
+    }
+    rubbish.ondrop = function(e) {
+        const text = e.dataTransfer.getData("text/plain");
+        if (text.indexOf("<remove>" === 0)) {
+            const target = document.getElementById(text.substring(8));
+            dest.removeChild(target);
+        }
+    }
+    document.ondragover = function() {
+        return false;
+    }
+    document.ondrop = function() {
+        return false;
+    }
+</script>
+</html>

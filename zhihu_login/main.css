@@ -1,0 +1,86 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+.modal {
+    height: 100%;
+    background: rgba(127, 127, 127, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dialog {
+    width: 400px;
+    height: 500px;
+    background: white;
+}
+.head {
+    text-align: center;
+    color: #0084ff;
+    font-size: 22px;
+    margin: 20px 0;
+}
+.body {
+    margin: 0 30px;
+    color: #8590a6;
+}
+.username{
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ebebeb;
+}
+.zone {
+    display: inline-block;
+}
+.line {
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background: #8590a6;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+.name {
+    display: inline-block;
+}
+.name>input {
+    border: none;
+    outline: none;
+    background: none;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+}
+.password {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 14px;
+}
+.password>input {
+    outline: none;
+    border: none;
+    background: none;
+    height: 48px;
+    line-height: 48px;
+}
+.password>span {
+    float: right;
+    cursor: pointer;
+}
+.secu-type {
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    font-size: 14px;
+}
+.sign {
+    outline: none;
+    border: 0;
+}
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .top-nav{
+        text-align: center;
+    }
+    ul {
+        display: inline-block;
+        list-style: none;
+        /* height: 60px;
+        line-height: 60px; */
+    }
+    ul li {
+        position: relative;
+        float: left;
+        width: 100px;
+        padding: 20px;
+    }
+    ul li:hover {
+        cursor: pointer;
+        color: red;
+    }
+    ul li:hover .dropdown-content{
+        display: block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+        color: black;
+        background: white;
+        /* border: 1px solid; */
+        box-shadow: 0 1px 10px gray;
+    }
+    /* .dropdown-content::after {
+        clear: both;
+        display: block;
+        content: '';
+    } */
+    .dropdown-content::before {
+        position: absolute;
+        content: '';
+        float: left;
+        border-left: 8px solid rgba(255, 255, 255, 0);
+        border-right: 8px solid rgba(255, 255, 255, 0);
+        border-bottom: 8px solid rgba(255, 255, 255, 1);
+        top: -8px;
+        left: 9px;
+    }
+    .dropdown-content li:hover .dropdown-second-content {
+        display: block;
+    }
+    .dropdown-second-content {
+        display: none;
+        position: absolute;
+        left: 104px;
+        top: 0px;
+        background: white;
+        box-shadow: 0 1px 10px gray;
+    }
+    .dropdown-second-content::before {
+        content: '';
+        position: absolute;
+        float: left;
+        border-top: 8px solid rgba(255, 255, 255, 0);
+        border-bottom: 8px solid rgba(255, 255, 255, 0);
+        border-right: 8px solid rgba(255, 255, 255, 1);
+        top: 25px;
+        left: -10px;
+    }
+</style>
+<body>
+    <div class="top-nav">
+        <ul>
+            <li>数学</li>
+            <li>英语</li>
+            <li>化学
+                <div class="dropdown-content">
+                    <ul>
+                        <li>大学
+                            <div class="dropdown-second-content">
+                                <ul>
+                                    <li>分子化学</li>
+                                    <li>原子化学</li>
+                                    <li>离子化学</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>高中
+                            <div class="dropdown-second-content">
+                                <ul>
+                                    <li>分子化学</li>
+                                    <li>原子化学</li>
+                                    <li>离子化学</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>初中</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

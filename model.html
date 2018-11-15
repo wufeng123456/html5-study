@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        height: 100%;
+        min-height: 100%;
+    }
+    .model {
+        /*1、css3 flex 实现水平垂直居中*/
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background: rgba(192,192,192, 0.7)
+    }
+    .model2{
+        height: 100%;
+        /* width: 300px; */
+        background: gold;
+        text-align: center;
+    }
+    .model2::before{
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content {
+        width: 30%;
+        height: 30%;
+        background: white;
+        /* margin: 0 auto; */
+        /*2、transform实现水平垂直居中*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .test {
+        width: 40%;
+        height: 40%;
+        background: red;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .study {
+        position: absolute;
+        background: green;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 50%;
+        height: 50%;
+    }
+    .school {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        top: 50%;
+        left: 50%;
+        background: blueviolet;
+        margin: -400px 0 0 -400px;
+    }
+    .cell {
+        /* display: inline-block;
+        height: 80%;
+        width: 80%;
+        background: blue; */
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<body>
+    <!-- <div class="model">
+        <div class="study">
+                hello, world
+        </div>
+        <div class="test">
+                laaaaaa
+        </div>
+        <div class="content">
+            haahhh1
+        </div>
+        <div class="school">
+                school
+        </div>
+        <div class="cell">
+            table-cell
+        </div>
+    </div> -->
+    <div class="model2">
+        <div class="cell">
+            table-cell
+        </div>
+    </div>
+</body>
+</html>

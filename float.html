@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        .header{
+            height: 100px;
+            line-height: 100px;
+            width: 100%;
+            background: red;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        /* .header div {
+            line-height: 100px;
+            height: 100px;
+            text-align: center;
+        } */
+        .body{
+            /* margin-top: 100px; */
+            /* height: auto; */
+            margin: auto;
+            height: 1000px;
+            background: green;
+        }
+        .left {
+            position: fixed;
+            right: 0;
+            top: 70px;
+            height: 200px;
+            width: 40px;
+            background: white;
+            z-index: 10;
+        }
+        .nav{
+            text-align: center;
+        }
+        ul {
+            display: inline-block;
+        }
+        ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul li {
+            float: left;
+            padding: 0 10px;
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        div
+    </div>
+    <div style="height:100px;"></div>
+    <div class="body">
+        <div class="nav">
+            <ul>
+                <li>hello</li>
+                <li>thank you</li>
+            </ul>
+        </div>
+    </div>
+    <div class="left"></div>
+</body>
+</html>

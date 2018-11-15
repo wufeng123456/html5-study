@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+    }
+    .top-nav {
+        text-align: center;
+    }
+    ul {
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+    }
+    ul li {
+        position: relative;
+        float: left;
+        padding: 0 20px;
+        list-style-type: none;
+    }
+    ul li:hover {
+        cursor: pointer;
+        background: greenyellow;
+    }
+    ul li i {
+        position: absolute;
+        display: inline;
+        top: -12px;
+        right: -5px;
+        transform: scale(.7);
+        font-size: 16px;
+        color: red;
+    }
+</style>
+<body>
+    <div class="top-nav">
+        <ul>
+            <li>编程入门教程<i class="icon free-icon">free</i></li>
+            <li>编程微课</li>
+            <li>编程实战</li>
+            <li>极客文档<i class="icon vip-icon">vip</i></li>
+        </ul>
+    </div>
+</body>
+</html>

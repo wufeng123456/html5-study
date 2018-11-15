@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>max-height、 min-height、 height 一起使用</title>
+    <style>
+        ul{
+            list-style:none;
+            padding:0;
+        }
+        .clearfix{
+            clear:both;
+            content:'';
+            display: block;
+        }
+        .clearfix:after{
+            content:'';
+            clear:both;
+            display:block;
+        }
+        .clearfix{
+            zoom:1;
+        }
+        .fl {
+            float:left;
+            display:inline;
+        }
+        .fr {
+            float:right;
+        }
+        .wrap{
+            width:200px;
+            margin-left:20px;
+        }
+        .box{
+            height:500px;
+            background-color:#e64c65;
+        }
+        .box2{
+            height:500px;
+            max-height:300px;
+            background-color:rgb(169, 173, 233);
+        }
+        .box3{
+            height:500px;
+            max-height:600px;
+            background-color:rgb(199, 69, 166);
+        }
+        .box4{
+            height:500px;
+            max-height:300px;
+            min-height:200px;
+            background-color:#ccc;
+        }
+
+        .box5{
+            height:500px;
+            max-height:300px;
+            min-height:400px;
+            background-color:#ccc;
+        }
+        .box6{
+            height:500px;
+            max-height:300px;
+            min-height:600px;
+            background-color:#ccc;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="box wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>实：width:100</li>
+                <li>实：height:500</li>
+            </ul>
+        </div>
+        <div class="box2 wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>原：max-height:300</li>
+                <li>实：width:100</li>
+                <li>实：height:300</li>
+            </ul>
+        </div>
+        <div class="box3 wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>原：max-height:600</li>
+                <li>实：width:100</li>
+                <li>实：height:500</li>
+            </ul>
+        </div>
+        <div class="box4 wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>原：max-height:300</li>
+                <li>原：min-height:200</li>
+                <li>实：width:100</li>
+                <li>实：width:300</li>
+            </ul>
+        </div>
+        <div class="box5 wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>原：max-height:300</li>
+                <li>原：min-height:400</li>
+                <li>实：width:100</li>
+                <li>实：width:400</li>
+            </ul>
+        </div>
+        <div class="box6 wrap fl">
+            <ul>
+                <li>原：width:200</li>
+                <li>原：height:500</li>
+                <li>原：max-height:300</li>
+                <li>原：min-height:600</li>
+                <li>实：width:100</li>
+                <li>实：width:600</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

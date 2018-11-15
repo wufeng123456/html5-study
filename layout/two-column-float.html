@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ html, body {
+     height: 100%;
+ }
+ .main {
+     position: relative;
+ }
+ .left {
+    /* position:absolute;
+    top: 0;
+    left: 0; */
+    float: left;
+    width: 300px;
+    background: green;
+ }
+ .right {
+    overflow: hidden;
+    background: yellow;
+ }
+ .clearfix{
+     zoom: 1;
+ }
+ .clearfix::after{
+     content: '';
+     display: block;
+     clear: both;
+ }
+</style>
+<body>
+    <div class="main clearfix">
+        <div class="left">
+            good morning everyone
+            good morning everyone
+            good morning everyone
+            good morning everyone
+            good morning everyone
+            good morning everyone
+            good morning everyone
+            good morning everyone
+        </div>
+        <div class="right">
+            <div>
+                1
+                    thank you very much
+                    thank you very much
+                    thank you very much
+                    thank you very much
+                    thank you very much
+                    thank you very much
+                    thank you very much
+        
+                    thank you very much
+                    thank you very much            thank you very much
+        
+                    thank you very much
+            </div>
+        </div>
+    </div>
+</body>
+</html>

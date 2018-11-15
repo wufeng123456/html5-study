@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+        #container {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .block {
+          position: absolute;
+          display: inline-block;
+          width: 50%;
+          height: 100%;
+          transition: all 2s;
+        }
+
+        .block-01 {
+          background-color: #99a9bf;
+        }
+
+        .block-02 {
+          background-color: #d3dce6;
+        }
+
+        h1 {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          transform: translateY(-50%);
+          padding: 0;
+          margin: 0;
+        }
+
+</style>
+<body>
+    <div id="app">
+        <div id="container">
+          <div class="block block-01">
+            <h1>1</h1>
+          </div>
+          <div class="block block-02">
+            <h1>2</h1>
+          </div>
+          <div class="block block-01">
+            <h1>3</h1>
+          </div>
+          <div class="block block-02">
+            <h1>4</h1>
+          </div>
+        </div>
+        <button id="btnPrev">prev</button>
+        <button id="btnNext">next</button>
+      </div>
+      
+</body>
+<script>
+var config = {
+  height: "300px",
+  index: 0,
+  scale: 0.83
+}
+var endX = 0;
+var startX = 0;
+var container = document.getElementById("container")
+container.style.height = config.height
+
+var blockLength = document.getElementsByClassName("block").length
+
+function getOffSet() {
+  var blocks = document.getElementsByClassName("block")
+  var offsetWidth = document.getElementById("container").offsetWidth
+
+  for (let i = 0, len = blocks.length; i < len; i++) {
+    if (i == config.index) {
+      var s = blocks[i].style
+      var translate = offsetWidth / 4
+      s.transform = s.msTransform = s.webkitTransform = `translateX(${translate}px)`
+      s.zIndex = 2
+      s.background = "#123"
+    } else {
+      var s = blocks[i].style
+      var translate = calculateTranslate(i, config.index, offsetWidth, blocks.length)
+      s.transform = s.msTransform = s.webkitTransform = `translateX(${translate}px) scale(${config.scale})`
+      s.zIndex = 1
+      s.background = "#d3dce6";
+    }
+  }
+}
+
+getOffSet()
+
+// 计算卡片化中组件的位置
+// 当前组件 选中组件 容器宽度
+function calculateTranslate(index, activeIndex, parentWidth, length) {
+  if ((activeIndex == 0 && index == length - 1) || (index == activeIndex - 1)) {
+    // 左边卡片
+    return -(1 - config.scale) * parentWidth / 4;
+  }
+  if ((activeIndex == length - 1 && index == 0) || (index == activeIndex + 1)) {
+    // 右边卡片
+    return (2 - config.scale) * (parentWidth / 2)
+  }
+  // 其他卡片
+  return (1 + config.index / 4) * parentWidth
+}
+
+// function prev() {
+//   pauseTimer()
+//   if (config.index > 0) {
+//     config.index--
+//   } else {
+//     config.index = blockLength - 1
+//   }
+//   getOffSet()
+// //   startTimer()
+// }
+
+// function next() {
+//   pauseTimer()
+//   if (config.index < blockLength - 1) {
+//     config.index++
+//   } else {
+//     config.index = 0
+//   }
+//   getOffSet()
+// //   startTimer()
+// }
+
+// document.getElementById("btnPrev").onclick = prev
+// document.getElementById("btnNext").onclick = next
+// console.log(document.getElementsByClassName("block"))
+// var blocks = document.getElementsByClassName("block");
+// for (var i = 0; i < blocks.length; i++) {
+//     blocks[i].addEventListener('touchstart', function(event) {
+//         console.log(1)
+//         console.log(event.changedTouches)
+//         startX = event.changedTouches[0].pageX;
+//         // next()
+//     })
+//     blocks[i].addEventListener('touchmove', function(event) {
+//         console.log(2)
+//         console.log(event)
+//         endX = event.changedTouches[0].pageX;
+//         // next()
+//     })
+//     blocks[i].addEventListener('touchend', function(event) {
+//         console.log(3)
+//         console.log(event)
+//         console.log(endX - startX)
+//         if (endX - startX > 0) {
+//             console.log('next')
+//             prev()
+//         } else {
+//             console.log('prev')
+//             next()
+//         }
+//     })
+// }
+
+// var timer = null
+
+// function pauseTimer() {
+//   if (timer) {
+//     clearInterval(timer)
+//   }
+// }
+
+// function startTimer() {
+//   timer = setInterval(next, 3000)
+// }
+
+// startTimer()
+
+</script>
+</html>
