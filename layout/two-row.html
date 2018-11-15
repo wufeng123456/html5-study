@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    :root, body{
+        height: 100%;
+    }
+    .content {
+        position: relative;
+        background: green;
+        height: 100%;
+    }
+    .content::after{
+        content: '';
+        clear: both;
+    }
+    .top {
+        height: 100px;
+        background: red;
+    }
+    .bottom {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background: gray;
+        /* 这个bottom 是关键啊不然不行 */
+        bottom: 0;
+        overflow: auto;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="top">
+            hahah
+        </div>
+        <div class="bottom">
+            lalla
+        </div>
+    </div>
+</body>
+</html>
